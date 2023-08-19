@@ -30,8 +30,10 @@ public class GameManager : MonoBehaviour
 
     StoryBlock currentBlock;
 
-    static StoryBlock block7 = new StoryBlock("Karen tried to ignore the girl, but she couldn't control her urges to confront her. She smiles and asks if Karen wanted to buy any cookies.", "Ask if she has a permit.", "Threaten to call the cops.");
-    static StoryBlock block6 = new StoryBlock("Karen chooses to confront the girl. She smiles and asks if Karen wanted to buy any cookies.", "Ask if she has a permit.", "Threaten to call the cops.");
+    static StoryBlock block9 = new StoryBlock("Karen tried calling the cops on the girl, but the cops thought she was crazy and hung up. Karen was livid.", "Fight the child", "Fight the child.");
+    static StoryBlock block8 = new StoryBlock("Karen demanded to see a permit from the girl. The girl started to cry, and didn't know what Karen meant.", "Fight the child.", "Fight the child.");
+    static StoryBlock block7 = new StoryBlock("Karen tried to ignore the girl, but she couldn't control her urges to confront her. She smiles and asks if Karen wanted to buy any cookies.", "Ask if she has a permit.", "Threaten to call the cops.", block8, block9);
+    static StoryBlock block6 = new StoryBlock("Karen chooses to confront the girl. She smiles and asks if Karen wanted to buy any cookies.", "Ask if she has a permit.", "Threaten to call the cops.", block8, block9);
     static StoryBlock block5 = new StoryBlock("Karen drives to grocery store and notices a young girl scout selling cookies.", "Confront the girl.", "Ignore the girl.", block6, block7);
     static StoryBlock block4 = new StoryBlock("Karen walks to grocery store and notices a young girl scout selling cookies.", "Confront the girl.", "Ignore the girl.", block6, block7);
     static StoryBlock block3 = new StoryBlock("Karen curses out God and gets struck by lightning. Game Over.");
