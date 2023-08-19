@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 2695045073
+    locked: 0
+  - name: BattleTextbackground
+    uniqueID: 2416380767
+    locked: 0
+  - name: BattleText
+    uniqueID: 1894801665
+    locked: 0
