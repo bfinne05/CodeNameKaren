@@ -36,9 +36,11 @@ public class GameManager : MonoBehaviour
 
     StoryBlock currentBlock;
 
-
+    static StoryBlock block15 = new StoryBlock("Karen enters the grocery store and shops for her items. After she finished, she approached the register and took out her coupons. The Cashier tells her that the store doesn't accept those coupons.", "Fight the Cashier.", "Fight the Cashier.");
+    static StoryBlock block14 = new StoryBlock("Karen decides to drive to Wendy's and tries to go through the drive through. She hit a curb and the car explodes. Game Over. Press a button to restart.");
+    static StoryBlock block13 = new StoryBlock("Karen arrives at the grocery store and pulls into a parking space.", "Enter the grocery store.", "Go Home.", block15, block12);
     static StoryBlock block12 = new StoryBlock("Karen was satisfied with what she did and decided to go home. On her way home, she was tailgated by the child's mother and driven off a cliff. Game Over. Press a button to restart.");
-    static StoryBlock block11 = new StoryBlock("Karen continued to the grocery store. She noticed that there was a Wendy's to her left.", "Continue to the grocery store.", "Go To Wendy's.");
+    static StoryBlock block11 = new StoryBlock("Karen continued to the grocery store. She noticed that there was a Wendy's to her left.", "Continue to the grocery store.", "Go To Wendy's.", block13, block14);
     static StoryBlock block10 = new StoryBlock("Karen punted the child. She wondered what to do next.", "Continue to the grocery store.", "Go Home.", block11, block12);
     static StoryBlock block9 = new StoryBlock("Karen tried calling the cops on the girl, but the cops thought she was crazy and hung up. Karen was livid.", "Fight the child", "Fight the child.", block10, block10);
     static StoryBlock block8 = new StoryBlock("Karen demanded to see a permit from the girl. The girl started to cry, and didn't know what Karen meant.", "Fight the child.", "Fight the child.", block10, block10);
