@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
 
     StoryBlock currentBlock;
 
+
     static StoryBlock block15 = new StoryBlock("Karen enters the grocery store and shops for her items. After she finished, she approached the register and took out her coupons. The Cashier tells her that the store doesn't accept those coupons.", "Fight the Cashier.", "Fight the Cashier.");
     static StoryBlock block14 = new StoryBlock("Karen decides to drive to Wendy's and tries to go through the drive through. She hit a curb and the car explodes. Game Over. Press a button to restart.");
     static StoryBlock block13 = new StoryBlock("Karen arrives at the grocery store and pulls into a parking space.", "Enter the grocery store.", "Go Home.", block15, block12);
@@ -104,10 +105,14 @@ public class GameManager : MonoBehaviour
         {
             image.sprite = backgroundSprites[1];
         }
-        //else if (mainText.text == )
-        //{
-        //    image.sprite = backgroundSprites[2];
-        //} else if (mainText.text ==)
+        else if (mainText.text == "Karen arrives at the grocery store and pulls into a parking space." )
+        {
+          image.sprite = backgroundSprites[2];
+        } 
+        else if (mainText.text == "Karen enters the grocery store and shops for her items. After she finished, she approached the register and took out her coupons. The Cashier tells her that the store doesn't accept those coupons.")
+        {
+            image.sprite = backgroundSprites[3];
+        }
 
     }
 }
