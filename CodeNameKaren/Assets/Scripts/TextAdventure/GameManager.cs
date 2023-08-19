@@ -13,20 +13,26 @@ public class GameManager : MonoBehaviour
         public string option2Text;
         public StoryBlock option1Block;
         public StoryBlock option2Block;
+        public Sprite backgroundImage;
 
-        public StoryBlock(string story, string option1Text = "", string option2Text = "", StoryBlock option1Block = null, StoryBlock option2Block = null)
+        public StoryBlock(string story, string option1Text = "", string option2Text = "", StoryBlock option1Block = null, StoryBlock option2Block = null, Sprite backgroundImage = null)
         {
             this.story = story;
             this.option1Text = option1Text;
             this.option2Text = option2Text;
             this.option1Block = option1Block;
             this.option2Block = option2Block;
+            this.backgroundImage = backgroundImage;
         }
+
     }
 
     [SerializeField] TextMeshProUGUI mainText;
     [SerializeField] Button option1;
     [SerializeField] Button option2;
+    [SerializeField] Image image;
+    [SerializeField] public Sprite[] backgroundSprites;
+
 
     StoryBlock currentBlock;
 
@@ -44,7 +50,6 @@ public class GameManager : MonoBehaviour
     static StoryBlock block2 = new StoryBlock("Karen decides to get dressed and goes to the grocery store.", "Walk to Grocery Store", "Use Car", block4, block5);
     static StoryBlock block1 = new StoryBlock("Karen wakes up in a cold sweat.", "Get Dressed.", "Curse out God.", block2, block3);
 
-    // Start is called before the first frame update
     void Start()
     {
         DisplayBlock(block1);
@@ -76,13 +81,31 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void DisplayBlock(StoryBlock block) 
+    void DisplayBlock(StoryBlock block)
     {
         mainText.text = block.story;
         option1.GetComponentInChildren<TextMeshProUGUI>().text = block.option1Text;
         option2.GetComponentInChildren<TextMeshProUGUI>().text = block.option2Text;
 
-        currentBlock = block;
-    }
+        if (block.backgroundImage != null)
+        {
+            image.sprite = block.backgroundImage;
+        }
 
+        currentBlock = block;
+
+        if (mainText.text == "Karen wakes up in a cold sweat.")
+        {
+            image.sprite = backgroundSprites[0];
+        }
+        else if (mainText.text == "Karen decides to get dressed and goes to the grocery store.")
+        {
+            image.sprite = backgroundSprites[1];
+        }
+        //else if (mainText.text == )
+        //{
+        //    image.sprite = backgroundSprites[2];
+        //} else if (mainText.text ==)
+
+    }
 }
