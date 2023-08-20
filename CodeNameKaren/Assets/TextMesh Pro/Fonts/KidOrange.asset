@@ -143,7 +143,7 @@ Material:
     m_Colors:
     - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
     - _EnvMatrixRotation: {r: 0, g: 0, b: 0, a: 0}
-    - _FaceColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FaceColor: {r: 1, g: 0.39654052, b: 0, a: 1}
     - _GlowColor: {r: 0, g: 1, b: 0, a: 0.5}
     - _MaskCoord: {r: 0, g: 0, b: 32767, a: 32767}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
@@ -162,11 +162,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: orange kid SDF
+  m_Name: KidOrange
   m_EditorClassIdentifier: 
-  hashCode: 803207911
+  hashCode: 274973750
   material: {fileID: -6829210811267096933}
-  materialHashCode: -712753945
+  materialHashCode: 444110678
   m_Version: 1.1.0
   m_SourceFontFileGUID: aa292e1b12a5614418be057d8074a4b8
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: aa292e1b12a5614418be057d8074a4b8, type: 3}
