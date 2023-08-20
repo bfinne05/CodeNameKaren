@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum BattleState 
 {
@@ -84,7 +86,9 @@ public class BattleSystem : MonoBehaviour
         var move = PlayerUnit.Character.Moves[currentMove];
         yield return DialogBox.TypeDialog(PlayerUnit.Character.Base.Name + " Used " + move.Base.name);
 
+        PlayerUnit.PlayAttackAnimation();
         yield return new WaitForSeconds(1f);
+        EnemyUnit.PlayHitAnimation();
 
         bool isfainted = EnemyUnit.Character.TakeDamage(move, PlayerUnit.Character);
         yield return EnemyHud.UpdateHP();
@@ -94,9 +98,12 @@ public class BattleSystem : MonoBehaviour
             if (EnemyUnit.Character.Base.Name == "Girl Scout")
             {
                 yield return DialogBox.TypeDialog(EnemyUnit.Character.Base.Name + " was punted by Karen");
+                EnemyUnit.PlayPuntAnimation();
                 BattleMusic.Stop();
                 Win1.Play();
-            }
+				yield return new WaitForSeconds(4f);
+                SceneManager.LoadScene("Karen");
+			}
             else
             {
                 yield return DialogBox.TypeDialog(EnemyUnit.Character.Base.Name + " quit their job");
@@ -117,8 +124,11 @@ public class BattleSystem : MonoBehaviour
 
 		yield return DialogBox.TypeDialog(EnemyUnit.Character.Base.Name + " Used " + move.Base.name);
 
+        EnemyUnit.PlayAttackAnimation();
 		yield return new WaitForSeconds(1f);
+        PlayerUnit.PlayHitAnimation();
 
+        
 		bool isfainted = PlayerUnit.Character.TakeDamage(move, EnemyUnit.Character);
         yield return playerHud.UpdateHP();
 
@@ -127,10 +137,12 @@ public class BattleSystem : MonoBehaviour
 			if (EnemyUnit.Character.Base.Name == "Girl Scout")
 			{
 				yield return DialogBox.TypeDialog("The police were called on Karen");
+                PlayerUnit.PlayFaintAnimation();
 			}
 			else
 			{
 				yield return DialogBox.TypeDialog("Karen fainted from her temper tantrum");
+                PlayerUnit.PlayFaintAnimation();
 			}
 
 		}
