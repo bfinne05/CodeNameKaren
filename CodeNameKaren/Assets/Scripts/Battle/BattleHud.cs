@@ -14,7 +14,7 @@ public class BattleHud : MonoBehaviour
 
     public void setData(Character character)
     {
-        NameText.text = character.Base.name;
+        NameText.text = character.Base.Name;
         LevelText.text = "Lvl " + character.level;
         hPBar.setHP((float)character.HP / character.MaxHP);
     }

@@ -6,7 +6,7 @@ using UnityEngine;
 public class CharacterClass : ScriptableObject
 {
     //:)
-    [SerializeField] string Name;
+    [SerializeField] public string Name;
     [SerializeField] string Description;
 
     //[TextArea]
@@ -87,7 +87,7 @@ public class CharacterClass : ScriptableObject
 
     public List<LearnableMoves> GetLearnableMoves()
     {
-        return new List<LearnableMoves>();
+        return learnableMoves;
     }
 
     [System.Serializable]
@@ -108,16 +108,4 @@ public class CharacterClass : ScriptableObject
 	}
 
     [SerializeField] List<LearnableMoves> learnableMoves;
-
-	// Start is called before the first frame update
-	void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
