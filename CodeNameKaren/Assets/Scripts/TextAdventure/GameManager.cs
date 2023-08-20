@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] Image image;
     [SerializeField] public Sprite[] backgroundSprites;
     [SerializeField] public AudioSource gameOver;
+    [SerializeField] public AudioSource gameMusic;
+
 
 
     StoryBlock currentBlock;
