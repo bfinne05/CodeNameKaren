@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Button option2;
     [SerializeField] Image image;
     [SerializeField] public Sprite[] backgroundSprites;
+    [SerializeField] public AudioSource gameOver;
 
 
     StoryBlock currentBlock;
@@ -114,6 +115,12 @@ public class GameManager : MonoBehaviour
         else if (mainText.text == "Karen enters the grocery store and shops for her items. After she finished, she approached the register and took out her coupons. The Cashier tells her that the store doesn't accept those coupons.")
         {
             image.sprite = backgroundSprites[3];
+        }
+        if (mainText.text.Contains("Game Over"))
+        {
+            image.sprite = backgroundSprites[4];
+            gameOver.Play();
+
         }
 
     }
