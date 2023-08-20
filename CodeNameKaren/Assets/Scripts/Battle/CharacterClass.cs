@@ -34,6 +34,20 @@ public class CharacterClass : ScriptableObject
         Physical
     }
 
+    public class TypeChart
+    {
+        float[][] chart =
+        {
+            /*None*/ new float[] {1f,1f,1f},
+            /*Kar*/ new float[] {1f,1f,1f},
+            /*Con*/ new float[] {1f,1f,1f},
+            /*Und*/ new float[] {1f,1f,1f},
+            /*Non*/ new float[] {1f,1f,1f},
+            /*Phy*/ new float[] {1f,1f,1f},
+		};
+            
+    }
+
     public string getDescription()
     {
         return Description;

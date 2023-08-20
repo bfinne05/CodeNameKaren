@@ -11,7 +11,7 @@ public class MoveBase : ScriptableObject
 	[SerializeField] string Description;
 
 	[SerializeField] public CharacterClass.CharacterType Type; //need to fix later maybe
-	[SerializeField] int Power;
+	[SerializeField] public int Power;
 	[SerializeField] int Accuracy;
 	[SerializeField] public int PP;
 

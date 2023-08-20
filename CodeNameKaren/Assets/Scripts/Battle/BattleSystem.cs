@@ -19,6 +19,8 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] BattleHud EnemyHud;
 
     [SerializeField] AudioSource SoundEffect;
+    [SerializeField] AudioSource Win1;
+    [SerializeField] AudioSource BattleMusic;
 
     [SerializeField] BattleDialogBox DialogBox;
 
@@ -30,6 +32,7 @@ public class BattleSystem : MonoBehaviour
     void Start()
     {
         StartCoroutine(SetupBattle());
+        BattleMusic.Play();
     }
 
 
@@ -75,6 +78,68 @@ public class BattleSystem : MonoBehaviour
         DialogBox.EnableMoveSelector(true);
     }
 
+    IEnumerator PerformPlayerMove()
+    {
+        state = BattleState.Busy;
+        var move = PlayerUnit.Character.Moves[currentMove];
+        yield return DialogBox.TypeDialog(PlayerUnit.Character.Base.Name + " Used " + move.Base.name);
+
+        yield return new WaitForSeconds(1f);
+
+        bool isfainted = EnemyUnit.Character.TakeDamage(move, PlayerUnit.Character);
+        yield return EnemyHud.UpdateHP();
+
+        if(isfainted) //change this to make fainted dialog change
+        {
+            if (EnemyUnit.Character.Base.Name == "Girl Scout")
+            {
+                yield return DialogBox.TypeDialog(EnemyUnit.Character.Base.Name + " was punted by Karen");
+                BattleMusic.Stop();
+                Win1.Play();
+            }
+            else
+            {
+                yield return DialogBox.TypeDialog(EnemyUnit.Character.Base.Name + " quit their job");
+            }
+
+        }
+        else
+        {
+            StartCoroutine(EnemyMove());
+        }
+    }
+
+    IEnumerator EnemyMove()
+    {
+        state = BattleState.EnemyMove;
+
+        var move = EnemyUnit.Character.GetRandomMove();
+
+		yield return DialogBox.TypeDialog(EnemyUnit.Character.Base.Name + " Used " + move.Base.name);
+
+		yield return new WaitForSeconds(1f);
+
+		bool isfainted = PlayerUnit.Character.TakeDamage(move, EnemyUnit.Character);
+        yield return playerHud.UpdateHP();
+
+		if (isfainted) //change this to make fainted dialog change
+		{
+			if (EnemyUnit.Character.Base.Name == "Girl Scout")
+			{
+				yield return DialogBox.TypeDialog("The police were called on Karen");
+			}
+			else
+			{
+				yield return DialogBox.TypeDialog("Karen fainted from her temper tantrum");
+			}
+
+		}
+		else
+		{
+            PlayerAction();
+		}
+	}
+
     void HandleActionSelection()
     {
         if (Input.GetKeyDown(KeyCode.DownArrow))
@@ -118,24 +183,24 @@ public class BattleSystem : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            if (currentMove < PlayerUnit.Character.Moves.Count)
+            if (currentMove < PlayerUnit.Character.Moves.Count - 1)
             {
-                currentMove++;
+                ++currentMove;
             }
 
         }
 
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            if (currentAction > 0)
+            if (currentMove > 0)
             {
-                currentMove--;
+                --currentMove;
             }
         }
 
 		else if (Input.GetKeyDown(KeyCode.DownArrow))
 		{
-			if (currentAction < PlayerUnit.Character.Moves.Count)
+			if (currentMove < PlayerUnit.Character.Moves.Count - 2)
 			{
                 currentMove += 2;
 			}
@@ -146,10 +211,18 @@ public class BattleSystem : MonoBehaviour
 		{
 			if (currentMove > 1)
 			{
-				currentMove -=2;
+				currentMove -= 2;
 			}
 		}
 
         DialogBox.UpdateMoveSelection(currentMove, PlayerUnit.Character.Moves[currentMove]);
+
+        if(Input.GetKeyDown(KeyCode.Z))
+        {
+            DialogBox.EnableMoveSelector(false);
+            DialogBox.EnableDialogText(true);
+            SoundEffect.Play();
+            StartCoroutine(PerformPlayerMove());
+        }
 	}
 }
