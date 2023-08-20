@@ -39,12 +39,13 @@ public class GameManager : MonoBehaviour
 
     StoryBlock currentBlock;
 
+    static StoryBlock block19 = new StoryBlock("Karen was satisfied with what she did and decided to go home. On her way home, she was tailgated by the child's mother and driven off a cliff. Game Over. Press a button to restart.");
     static StoryBlock block18 = new StoryBlock("The man replies: GET OUT OF MY STORE.", "Fight the MANAGER.", "Fight the MANAGER.");
     static StoryBlock block17 = new StoryBlock("The man replies: I AM THE MANAGER.", "Fight the MANAGER", "Fight the MANAGER");
     static StoryBlock block16 = new StoryBlock("Karen destroyed the cashier with her facts and logic. She noticed a man with glasses approach her.", "Ask who he is.", "Ask what does he want", block17, block18);
     static StoryBlock block15 = new StoryBlock("Karen enters the grocery store and shops for her items. After she finished, she approached the register and took out her coupons. The Cashier tells her that the store doesn't accept those coupons.", "Throw Shopping Cart At Cashier.", "Throw Shopping Cart At Cashier", block16, block16);
     static StoryBlock block14 = new StoryBlock("Karen decides to drive to Wendy's and tries to go through the drive through. She hit a curb and the car explodes. Game Over. Press a button to restart.");
-    static StoryBlock block13 = new StoryBlock("Karen arrives at the grocery store and pulls into a parking space.", "Enter the grocery store.", "Go Home.", block15, block12);
+    static StoryBlock block13 = new StoryBlock("Karen arrives at the grocery store and pulls into a parking space.", "Enter the grocery store.", "Go Home.", block15, block19);
     static StoryBlock block12 = new StoryBlock("Karen was satisfied with what she did and decided to go home. On her way home, she was tailgated by the child's mother and driven off a cliff. Game Over. Press a button to restart.");
     static StoryBlock block11 = new StoryBlock("Karen continued to the grocery store. She noticed that there was a Wendy's to her left.", "Continue to the grocery store.", "Go To Wendy's.", block13, block14);
     static StoryBlock block10 = new StoryBlock("Karen punted the child. She wondered what to do next.", "Continue to the grocery store.", "Go Home.", block11, block12);
