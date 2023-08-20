@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
 
     StoryBlock currentBlock;
 
+    static StoryBlock block20 = new StoryBlock("Karen was defeated by the lowly peasant");
     static StoryBlock block19 = new StoryBlock("Karen was satisfied with what she did and decided to go home. On her way home, she was tailgated by the child's mother and driven off a cliff. Game Over. Press a button to restart.");
     static StoryBlock block18 = new StoryBlock("The man replies: GET OUT OF MY STORE.", "Fight the MANAGER.", "Fight the MANAGER.");
     static StoryBlock block17 = new StoryBlock("The man replies: I AM THE MANAGER.", "Fight the MANAGER", "Fight the MANAGER");
@@ -65,6 +66,13 @@ public class GameManager : MonoBehaviour
         {
             DisplayBlock(block10);
         }
+        else if (PersistentData.Instance.IsDead)
+        {
+            DisplayBlock(block20);
+        }
+        {
+
+        }
         else
         {
             DisplayBlock(block1);
@@ -77,6 +85,12 @@ public class GameManager : MonoBehaviour
         {
             PersistentData.Instance.Block = 10;
             LoadSceneByName("BattleScene"); // Replace "BattleScene" with the name of your battle scene
+            return;
+        }        
+        if (option1.GetComponentInChildren<TextMeshProUGUI>().text == "Throw Shopping Cart At Cashier.")
+        {
+            PersistentData.Instance.Block = 20;
+            LoadSceneByName("BattleScene2"); // Replace "BattleScene" with the name of your battle scene
             return;
         }
 
@@ -97,6 +111,12 @@ public class GameManager : MonoBehaviour
         {
             PersistentData.Instance.Block = 10;
             LoadSceneByName("BattleScene"); // Replace "BattleScene" with the name of your battle scene
+            return;
+        }        
+        if (option2.GetComponentInChildren<TextMeshProUGUI>().text == "Throw Shopping Cart At Cashier.")
+        {
+            PersistentData.Instance.Block = 20;
+            LoadSceneByName("BattleScene2"); // Replace "BattleScene" with the name of your battle scene
             return;
         }
 
