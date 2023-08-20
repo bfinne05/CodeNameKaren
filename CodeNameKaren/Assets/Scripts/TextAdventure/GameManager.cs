@@ -116,8 +116,9 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            // Reset the game
-            DisplayBlock(block1);
+            LoadSceneByName("Title");
+            PersistentData.Instance.IsDead = false;
+            PersistentData.Instance.Block = 0;
         }
     }
 
@@ -148,8 +149,9 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            // Reset the game
-            DisplayBlock(block1);
+            LoadSceneByName("Title");
+            PersistentData.Instance.IsDead = false;
+            PersistentData.Instance.Block = 0;
         }
     }
 
@@ -191,12 +193,14 @@ public class GameManager : MonoBehaviour
         {
             image.sprite = backgroundSprites[4];
             gameOver.Play();
+            gameMusic.Stop();
         }
 
         if (mainText.text == "Lesson: Karens Never Prosper. GAME OVER YEAAAH")
         {
             image.sprite = backgroundSprites[5];
             gameOver.Play();
+            gameMusic.Stop();
         }
 
 
