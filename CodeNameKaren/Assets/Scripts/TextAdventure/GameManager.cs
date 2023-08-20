@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
 
     StoryBlock currentBlock;
 
-    static StoryBlock block21 = new StoryBlock("Lesson: Karens Never Prosper. Game Over");
+    static StoryBlock block21 = new StoryBlock("Lesson: Karens Never Prosper. GAME OVER YEAAAH");
     static StoryBlock block20 = new StoryBlock("Karen was defeated by the lowly peasant Game Over");
     static StoryBlock block19 = new StoryBlock("Karen was satisfied with what she did and decided to go home. On her way home, she was tailgated by the child's mother and driven off a cliff. Game Over. Press a button to restart.");
     static StoryBlock block18 = new StoryBlock("The man replies: GET OUT OF MY STORE.", "Fight the MANAGER.", "Fight the MANAGER.");
@@ -189,8 +189,14 @@ public class GameManager : MonoBehaviour
         {
             image.sprite = backgroundSprites[4];
             gameOver.Play();
-
         }
+
+        if (mainText.text == "Lesson: Karens Never Prosper. GAME OVER YEAAAH")
+        {
+            image.sprite = backgroundSprites[5];
+            gameOver.Play();
+        }
+
 
     }
 }

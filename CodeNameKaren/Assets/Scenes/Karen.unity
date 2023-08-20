@@ -984,6 +984,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Block: 0
+  IsDead: 0
 --- !u!4 &1328920797
 Transform:
   m_ObjectHideFlags: 0
@@ -1451,6 +1452,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d3635389157e8164b97753ba774a921f, type: 3}
   - {fileID: 21300000, guid: 43da05a7537ce4e4dbb68b4e76917568, type: 3}
   - {fileID: 21300000, guid: 1bc065eaed98e0b4ab9ccbe8eb49ae39, type: 3}
+  - {fileID: 21300000, guid: 5cb26b6fb5db8b24f8a5bdaf0ef4345a, type: 3}
   gameOver: {fileID: 516834879}
 --- !u!4 &1940689307
 Transform:
