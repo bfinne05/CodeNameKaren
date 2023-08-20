@@ -70,9 +70,6 @@ public class GameManager : MonoBehaviour
         {
             DisplayBlock(block20);
         }
-        {
-
-        }
         else
         {
             DisplayBlock(block1);
