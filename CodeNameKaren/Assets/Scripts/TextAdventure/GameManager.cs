@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    class StoryBlock
+
+    public class StoryBlock
     {
         public string story;
         public string option1Text;
@@ -46,7 +48,7 @@ public class GameManager : MonoBehaviour
     static StoryBlock block12 = new StoryBlock("Karen was satisfied with what she did and decided to go home. On her way home, she was tailgated by the child's mother and driven off a cliff. Game Over. Press a button to restart.");
     static StoryBlock block11 = new StoryBlock("Karen continued to the grocery store. She noticed that there was a Wendy's to her left.", "Continue to the grocery store.", "Go To Wendy's.", block13, block14);
     static StoryBlock block10 = new StoryBlock("Karen punted the child. She wondered what to do next.", "Continue to the grocery store.", "Go Home.", block11, block12);
-    static StoryBlock block9 = new StoryBlock("Karen tried calling the cops on the girl, but the cops thought she was crazy and hung up. Karen was livid.", "Fight the child", "Fight the child.", block10, block10);
+    static StoryBlock block9 = new StoryBlock("Karen tried calling the cops on the girl, but the cops thought she was crazy and hung up. Karen was livid.", "Fight the child.", "Fight the child.", block10, block10);
     static StoryBlock block8 = new StoryBlock("Karen demanded to see a permit from the girl. The girl started to cry, and didn't know what Karen meant.", "Fight the child.", "Fight the child.", block10, block10);
     static StoryBlock block7 = new StoryBlock("Karen tried to ignore the girl, but she couldn't control her urges to confront her. She smiles and asks if Karen wanted to buy any cookies.", "Ask if she has a permit.", "Threaten to call the cops.", block8, block9);
     static StoryBlock block6 = new StoryBlock("Karen chooses to confront the girl. She smiles and asks if Karen wanted to buy any cookies.", "Ask if she has a permit.", "Threaten to call the cops.", block8, block9);
@@ -58,11 +60,25 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        DisplayBlock(block1);
+        if (PersistentData.Instance.Block == 10)
+        {
+            DisplayBlock(block10);
+        }
+        else
+        {
+            DisplayBlock(block1);
+        }
     }
 
     public void Button1Clicked()
     {
+        if (option1.GetComponentInChildren<TextMeshProUGUI>().text == "Fight the child.")
+        {
+            PersistentData.Instance.Block = 10;
+            LoadSceneByName("BattleScene"); // Replace "BattleScene" with the name of your battle scene
+            return;
+        }
+
         if (currentBlock.option1Block != null)
         {
             DisplayBlock(currentBlock.option1Block);
@@ -76,6 +92,13 @@ public class GameManager : MonoBehaviour
 
     public void Button2Clicked()
     {
+        if (option2.GetComponentInChildren<TextMeshProUGUI>().text == "Fight the child.")
+        {
+            PersistentData.Instance.Block = 10;
+            LoadSceneByName("BattleScene"); // Replace "BattleScene" with the name of your battle scene
+            return;
+        }
+
         if (currentBlock.option2Block != null)
         {
             DisplayBlock(currentBlock.option2Block);
@@ -85,6 +108,11 @@ public class GameManager : MonoBehaviour
             // Reset the game
             DisplayBlock(block1);
         }
+    }
+
+    public void LoadSceneByName(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 
     void DisplayBlock(StoryBlock block)
