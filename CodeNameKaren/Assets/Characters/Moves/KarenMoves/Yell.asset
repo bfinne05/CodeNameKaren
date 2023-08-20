@@ -16,6 +16,6 @@ MonoBehaviour:
   Description: Yell out to your hearts content at your enemy to prove your in the
     right
   Type: 1
-  Power: 50
+  Power: 35
   Accuracy: 100
   PP: 15

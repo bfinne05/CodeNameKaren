@@ -15,6 +15,6 @@ MonoBehaviour:
   Name: Ignore
   Description: Don't listen to the ramblings of karen
   Type: 3
-  Power: 150
+  Power: 0
   Accuracy: 100
   PP: 1

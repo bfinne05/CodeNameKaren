@@ -16,6 +16,6 @@ MonoBehaviour:
   Description: You asked for chocolate cookies but got raisins instead throw them
     at your opponent
   Type: 5
-  Power: 40
+  Power: 45
   Accuracy: 95
   PP: 20
