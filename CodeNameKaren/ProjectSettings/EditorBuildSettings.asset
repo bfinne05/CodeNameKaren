@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Title.unity
+    guid: 7249d345029594143ad2286dc506a27a
   - enabled: 1
     path: Assets/Scenes/Karen.unity
     guid: 0f7b89d698ca15c488dde8ce72393bb9
@@ -15,11 +18,11 @@ EditorBuildSettings:
     path: Assets/Scenes/BattleScene.unity
     guid: 6a854fe1c2d69d442a5f7c6805df5c23
   - enabled: 1
-    path: Assets/Scenes/BattleScene3.unity
-    guid: 00a2fb521a4a02749b7baeb85fc46ef0
-  - enabled: 1
     path: Assets/Scenes/BattleScene2.unity
     guid: 11f3acb1a0ac8b44dacb3357152d5755
+  - enabled: 1
+    path: Assets/Scenes/BattleScene3.unity
+    guid: 00a2fb521a4a02749b7baeb85fc46ef0
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 576a6fd8748c99c4e9cee39e01a4af95
