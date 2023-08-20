@@ -11,15 +11,30 @@ public class TitleGameManager : MonoBehaviour
         
     }
 
-    public void CreditsButton()
+    public void Credits1Button()
     {
-
+        LoadSceneByName("Credits");
     }
 
-    public void StartGameButton()
+	public void Credits2Button()
+	{
+		LoadSceneByName("Credits 2");
+	}
+
+	public void Credits3Button()
+	{
+		LoadSceneByName("Credits 3");
+	}
+
+	public void StartGameButton()
     {
         LoadSceneByName("Karen");
     }
+
+    public void BackToTitle()
+    {
+		LoadSceneByName("Title");
+	}
 
     public void LoadSceneByName(string sceneName)
     {
