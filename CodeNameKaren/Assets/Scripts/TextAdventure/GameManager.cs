@@ -67,11 +67,16 @@ public class GameManager : MonoBehaviour
             PersistentData.Instance.Block = 0;
             DisplayBlock(block10);
         }
+        else if (PersistentData.Instance.IsDead && PersistentData.Instance.Block == 20)
+        {
+            DisplayBlock(block20);
+        }
         else if (PersistentData.Instance.Block == 20)
         {
+            PersistentData.Instance.Block = 0;
             DisplayBlock(block16);
         }
-        else if (PersistentData.Instance.IsDead)
+        else if (PersistentData.Instance.Block == 30 && PersistentData.Instance.IsDead == true)
         {
             DisplayBlock(block20);
         }
@@ -93,6 +98,12 @@ public class GameManager : MonoBehaviour
         {
             PersistentData.Instance.Block = 20;
             LoadSceneByName("BattleScene2"); // Replace "BattleScene" with the name of your battle scene
+            return;
+        }
+        if (option1.GetComponentInChildren<TextMeshProUGUI>().text == "Fight the MANAGER")
+        {
+            PersistentData.Instance.Block = 30;
+            LoadSceneByName("BattleScene3"); // Replace "BattleScene" with the name of your battle scene
             return;
         }
 
@@ -119,6 +130,12 @@ public class GameManager : MonoBehaviour
         {
             PersistentData.Instance.Block = 20;
             LoadSceneByName("BattleScene2"); 
+            return;
+        }
+        if (option2.GetComponentInChildren<TextMeshProUGUI>().text == "Fight the MANAGER")
+        {
+            PersistentData.Instance.Block = 30;
+            LoadSceneByName("BattleScene3");
             return;
         }
 
