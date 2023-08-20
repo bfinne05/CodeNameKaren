@@ -116,6 +116,7 @@ public class BattleSystem : MonoBehaviour
             {
                 yield return DialogBox.TypeDialog(EnemyUnit.Character.Base.Name + " quit their job");
                 EnemyUnit.PlayFaintAnimation();
+                BattleMusic.Stop();
                 Win1.Play();
                 yield return new WaitForSeconds(5f);
                 SceneManager.LoadScene("Karen");

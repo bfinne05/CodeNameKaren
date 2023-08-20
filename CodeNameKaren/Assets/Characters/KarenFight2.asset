@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Karen
   Description: This is you
-  BattleImage: {fileID: 21300000, guid: fba02145f68bddd4ca94eebbdca47958, type: 3}
-  AttackImage: {fileID: 21300000, guid: fba02145f68bddd4ca94eebbdca47958, type: 3}
+  BattleImage: {fileID: 21300000, guid: feb6d2925d41efa4dbf2c453b3772262, type: 3}
+  AttackImage: {fileID: 21300000, guid: feb6d2925d41efa4dbf2c453b3772262, type: 3}
   maxHP: 125
   Attack: 25
   Defense: 10
