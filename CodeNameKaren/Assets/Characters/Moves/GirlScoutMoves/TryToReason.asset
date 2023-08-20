@@ -15,6 +15,6 @@ MonoBehaviour:
   Name: Reason
   Description: Try to convince Karen that she's not making any sense
   Type: 3
-  Power: 80
+  Power: 45
   Accuracy: 20
   PP: 30

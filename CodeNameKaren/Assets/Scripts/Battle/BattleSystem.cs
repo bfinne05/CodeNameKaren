@@ -76,7 +76,7 @@ public class BattleSystem : MonoBehaviour
     void PlayerAction()
     {
         state = BattleState.PlayerAction;
-        StartCoroutine(DialogBox.TypeDialog("Choose an action" + "\n" + "Arrow Keys - Selection" + "\n" + "Z - confirm action"));
+        DialogBox.TypeDialog("Choose an action" + "\n" + "Arrow Keys - Selection" + "\n" + "Z - Confirm Action");
         DialogBox.EnableActionSelector(true);
     }
 

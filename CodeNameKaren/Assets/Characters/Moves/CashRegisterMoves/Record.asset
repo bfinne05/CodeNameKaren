@@ -15,6 +15,6 @@ MonoBehaviour:
   Name: Record
   Description: Cashier records karen
   Type: 3
-  Power: 50
+  Power: 20
   Accuracy: 100
   PP: 20

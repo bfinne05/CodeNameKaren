@@ -15,6 +15,6 @@ MonoBehaviour:
   Name: Checkout
   Description: words
   Type: 5
-  Power: 100
+  Power: 50
   Accuracy: 100
   PP: 4
