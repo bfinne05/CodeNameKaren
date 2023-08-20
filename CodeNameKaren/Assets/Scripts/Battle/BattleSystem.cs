@@ -109,14 +109,17 @@ public class BattleSystem : MonoBehaviour
                 EnemyUnit.PlayPuntAnimation();
                 BattleMusic.Stop();
                 Win1.Play();
-				yield return new WaitForSeconds(4f);
+				yield return new WaitForSeconds(5f);
                 SceneManager.LoadScene("Karen");
 			}
             else
             {
                 yield return DialogBox.TypeDialog(EnemyUnit.Character.Base.Name + " quit their job");
+                EnemyUnit.PlayFaintAnimation();
+                Win1.Play();
+                yield return new WaitForSeconds(5f);
+                SceneManager.LoadScene("Karen");
             }
-
         }
         else
         {

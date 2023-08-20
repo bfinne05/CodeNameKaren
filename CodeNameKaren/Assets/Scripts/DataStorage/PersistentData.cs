@@ -7,6 +7,7 @@ public class PersistentData : MonoBehaviour
         public static PersistentData Instance;
 
         public int Block;
+        public bool IsDead = false;
 
         private void Awake()
         {
