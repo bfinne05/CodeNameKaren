@@ -59,7 +59,15 @@ public class BattleSystem : MonoBehaviour
 
         DialogBox.SetMoveNames(PlayerUnit.Character.Moves);
 
-        yield return StartCoroutine(DialogBox.TypeDialog("You Challenged " + EnemyUnit.Character.Base.Name));
+        if(EnemyUnit.Character.Base.Name != "Manager")
+        {
+            yield return StartCoroutine(DialogBox.TypeDialog(PlayerUnit.Character.Base.Name + " Challenged " + EnemyUnit.Character.Base.Name));
+        }
+        else
+        {
+            yield return StartCoroutine(DialogBox.TypeDialog(EnemyUnit.Character.Base.Name + " Challenged " + PlayerUnit.Character.Base.Name));
+
+        }
         yield return new WaitForSeconds(1f);
 
         PlayerAction();
