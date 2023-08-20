@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
     static StoryBlock block18 = new StoryBlock("The man replies: GET OUT OF MY STORE.", "Fight the MANAGER.", "Fight the MANAGER.");
     static StoryBlock block17 = new StoryBlock("The man replies: I AM THE MANAGER.", "Fight the MANAGER", "Fight the MANAGER");
     static StoryBlock block16 = new StoryBlock("Karen destroyed the cashier with her facts and logic. She noticed a man with glasses approach her.", "Ask who he is.", "Ask what does he want", block17, block18);
-    static StoryBlock block15 = new StoryBlock("Karen enters the grocery store and shops for her items. After she finished, she approached the register and took out her coupons. The Cashier tells her that the store doesn't accept those coupons.", "Throw Shopping Cart At Cashier.", "Throw Shopping Cart At Cashier", block16, block16);
+    static StoryBlock block15 = new StoryBlock("Karen enters the grocery store and shops for her items. After she finished, she approached the register and took out her coupons. The Cashier tells her that the store doesn't accept those coupons.", "Throw Shopping Cart At Cashier.", "Throw Shopping Cart At Cashier.", block16, block16);
     static StoryBlock block14 = new StoryBlock("Karen decides to drive to Wendy's and tries to go through the drive through. She hit a curb and the car explodes. Game Over. Press a button to restart.");
     static StoryBlock block13 = new StoryBlock("Karen arrives at the grocery store and pulls into a parking space.", "Enter the grocery store.", "Go Home.", block15, block19);
     static StoryBlock block12 = new StoryBlock("Karen was satisfied with what she did and decided to go home. On her way home, she was tailgated by the child's mother and driven off a cliff. Game Over. Press a button to restart.");
@@ -64,7 +64,12 @@ public class GameManager : MonoBehaviour
     {
         if (PersistentData.Instance.Block == 10)
         {
+            PersistentData.Instance.Block = 0;
             DisplayBlock(block10);
+        }
+        else if (PersistentData.Instance.Block == 20)
+        {
+            DisplayBlock(block16);
         }
         else if (PersistentData.Instance.IsDead)
         {
@@ -113,7 +118,7 @@ public class GameManager : MonoBehaviour
         if (option2.GetComponentInChildren<TextMeshProUGUI>().text == "Throw Shopping Cart At Cashier.")
         {
             PersistentData.Instance.Block = 20;
-            LoadSceneByName("BattleScene2"); // Replace "BattleScene" with the name of your battle scene
+            LoadSceneByName("BattleScene2"); 
             return;
         }
 
