@@ -151,6 +151,18 @@ public class BattleSystem : MonoBehaviour
 				yield return DialogBox.TypeDialog("The police were called on Karen");
                 PlayerUnit.PlayFaintAnimation();
 			}
+            else if(EnemyUnit.Character.Base.Name == "Manager")
+            {
+				yield return DialogBox.TypeDialog("Karen was kicked out of the store");
+				PlayerUnit.PlayFaintAnimation();
+
+                PersistentData.Instance.IsDead = true;
+
+				yield return new WaitForSeconds(5f);
+
+                SceneManager.LoadScene("Karen");
+
+			}
 			else
 			{
 				yield return DialogBox.TypeDialog("Karen fainted from her temper tantrum");
