@@ -15,6 +15,6 @@ MonoBehaviour:
   Name: Punt
   Description: Kick your opponent into another demision
   Type: 5
-  Power: 120
-  Accuracy: 80
+  Power: 999
+  Accuracy: 100
   PP: 5

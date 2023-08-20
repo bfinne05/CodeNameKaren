@@ -10,8 +10,8 @@ public class CharacterClass : ScriptableObject
     [SerializeField] string Description;
 
     //[TextArea]
-    [SerializeField] Sprite BattleImage;
-    [SerializeField] Sprite AttackImage;
+    [SerializeField] public Sprite BattleImage;
+    [SerializeField] public Sprite AttackImage;
 
     //stats
     [SerializeField] int maxHP;
