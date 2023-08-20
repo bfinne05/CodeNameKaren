@@ -76,7 +76,7 @@ public class BattleSystem : MonoBehaviour
     void PlayerAction()
     {
         state = BattleState.PlayerAction;
-        StartCoroutine(DialogBox.TypeDialog("Choose an action"));
+        StartCoroutine(DialogBox.TypeDialog("Choose an action" + "\n" + "Arrow Keys - Selection" + "\n" + "Z - confirm action"));
         DialogBox.EnableActionSelector(true);
     }
 
@@ -193,8 +193,9 @@ public class BattleSystem : MonoBehaviour
             }
             else if (currentAction == 1)
             {
-                //defend or burn turn
-                SoundEffect.Play();
+                //defend text
+				StartCoroutine(DialogBox.TypeDialog("Karen is always on the offensive...Nerd"));
+				SoundEffect.Play();
             }
         }
     }
