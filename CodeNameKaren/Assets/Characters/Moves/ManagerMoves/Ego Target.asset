@@ -15,6 +15,6 @@ MonoBehaviour:
   Name: Ego Target
   Description: 
   Type: 3
-  Power: 20
+  Power: 0
   Accuracy: 100
   PP: 6
