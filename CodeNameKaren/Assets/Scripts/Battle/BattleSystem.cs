@@ -76,7 +76,7 @@ public class BattleSystem : MonoBehaviour
     void PlayerAction()
     {
         state = BattleState.PlayerAction;
-        DialogBox.TypeDialog("Choose an action" + "\n" + "Arrow Keys - Selection" + "\n" + "Z - Confirm Action");
+        StartCoroutine(DialogBox.TypeDialog("Choose an action" + "\n" + "Arrow Keys - Selection" + "\n" + "Z - Confirm Action"));
         DialogBox.EnableActionSelector(true);
     }
 
@@ -155,6 +155,11 @@ public class BattleSystem : MonoBehaviour
 			{
 				yield return DialogBox.TypeDialog("Karen fainted from her temper tantrum");
                 PlayerUnit.PlayFaintAnimation();
+                
+				yield return new WaitForSeconds(5f);
+
+                PersistentData.Instance.IsDead = true;
+				SceneManager.LoadScene("Karen");
 			}
 
 		}
