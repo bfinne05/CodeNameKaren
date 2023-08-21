@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
     static StoryBlock block21 = new StoryBlock("Lesson: Karens Never Prosper. GAME OVER YEAAAH");
     static StoryBlock block20 = new StoryBlock("Karen was defeated by the lowly peasant Game Over");
     static StoryBlock block19 = new StoryBlock("Karen was satisfied with what she did and decided to go home. On her way home, she was tailgated by the child's mother and driven off a cliff. Game Over. Press a button to restart.");
-    static StoryBlock block18 = new StoryBlock("The man replies: GET OUT OF MY STORE.", "Fight the MANAGER.", "Fight the MANAGER.");
+    static StoryBlock block18 = new StoryBlock("The man replies: GET OUT OF MY STORE.", "Fight the MANAGER", "Fight the MANAGER");
     static StoryBlock block17 = new StoryBlock("The man replies: I AM THE MANAGER.", "Fight the MANAGER", "Fight the MANAGER");
     static StoryBlock block16 = new StoryBlock("Karen destroyed the cashier with her facts and logic. She noticed a man with glasses approach her.", "Ask who he is.", "Ask what does he want", block17, block18);
     static StoryBlock block15 = new StoryBlock("Karen enters the grocery store and shops for her items. After she finished, she approached the register and took out her coupons. The Cashier tells her that the store doesn't accept those coupons.", "Throw Shopping Cart At Cashier.", "Throw Shopping Cart At Cashier.", block16, block16);
