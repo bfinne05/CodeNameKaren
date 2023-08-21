@@ -33,7 +33,7 @@ public class BattleDialogBox : MonoBehaviour
         foreach(var letter in dialog.ToCharArray())
         {
             DialogText.text += letter;
-            yield return null;//new WaitForSeconds(1f / lettersPerSecond);
+            yield return new WaitForSeconds(1f / lettersPerSecond);
         }
     }
 

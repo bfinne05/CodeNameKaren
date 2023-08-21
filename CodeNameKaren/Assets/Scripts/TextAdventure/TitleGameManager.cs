@@ -36,7 +36,16 @@ public class TitleGameManager : MonoBehaviour
 		LoadSceneByName("Title");
 	}
 
-    public void LoadSceneByName(string sceneName)
+    public void QuitGame()
+    {
+#if UNITY_EDITOR
+		UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+	}
+
+	public void LoadSceneByName(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
     }
